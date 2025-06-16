@@ -1,5 +1,5 @@
-let NUMBER_LENGTH = 3; // 자리수 (동적으로 변경)
-const MAX_CHANCE = 9;
+let NUMBER_LENGTH = 4; // 기본값 4자리
+const MAX_CHANCE = 20;
 
 let answer = [];
 let chance = MAX_CHANCE;
@@ -38,11 +38,11 @@ function resetGame() {
   inputArea.classList.remove('hidden');
   restartBtn.classList.add('hidden');
   startBtn.classList.add('hidden');
-  answerArea.classList.remove('hidden');
-  answerValue.textContent = answer.join('');
+  answerArea.classList.add('hidden'); // 정답 항상 숨김
+  // digitSelect.parentElement.style.display = 'none'; // 삭제 대신 숨김
+  document.getElementById('settings-area').classList.add('hidden'); // 자리수 UI 숨김
   numberInputs.innerHTML = '';
   historyList.innerHTML = '';
-  digitSelect.parentElement.style.display = 'none'; // 자리수 선택 감춤
   for (let i = 0; i < NUMBER_LENGTH; i++) {
     const input = document.createElement('input');
     input.type = 'number';
@@ -98,7 +98,8 @@ function endGame(success) {
   gameActive = false;
   inputArea.classList.add('hidden');
   restartBtn.classList.remove('hidden');
-  digitSelect.parentElement.style.display = 'block'; // 자리수 선택 다시 보이기
+  // digitSelect.parentElement.style.display = 'block';
+  document.getElementById('settings-area').classList.remove('hidden'); // 자리수 UI 다시 보이기
 }
 
 startBtn.addEventListener('click', resetGame);
