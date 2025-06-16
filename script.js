@@ -39,7 +39,7 @@ function resetGame() {
   restartBtn.classList.add('hidden');
   startBtn.classList.add('hidden');
   answerArea.classList.add('hidden'); // 정답 항상 숨김
-  // digitSelect.parentElement.style.display = 'none'; // 삭제 대신 숨김
+  // digitSelect.parentElement.style.display = 'none'; // 삭제 대신 숨김!
   document.getElementById('settings-area').classList.add('hidden'); // 자리수 UI 숨김
   numberInputs.innerHTML = '';
   historyList.innerHTML = '';
