@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>숫자야구 게임</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>숫자야구 게임</h1>
+    <div id="game-area">
+      <div id="settings-area">
+        <label for="digit-select">자리수 선택:</label>
+        <select id="digit-select">
+          <option value="3">3자리</option>
+          <option value="4">4자리</option>
+          <option value="5">5자리</option>
+          <option value="6">6자리</option>
+        </select>
+      </div>
+      <button id="start-btn">게임 시작</button>
+      <div id="answer-area" class="hidden">정답: <span id="answer-value"></span></div>
+      <div id="input-area" class="hidden">
+        <div id="number-inputs"></div>
+        <button id="submit-btn">입력</button>
+      </div>
+      <div id="result-area"></div>
+      <div id="chance-area"></div>
+      <div id="history-area">
+        <h3>기록</h3>
+        <ul id="history-list"></ul>
+      </div>
+      <button id="restart-btn" class="hidden">재시작</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
